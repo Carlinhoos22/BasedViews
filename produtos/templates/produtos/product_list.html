@@ -10,14 +10,14 @@
     <p>LISTAGEM PRODUTOS</p>
 
     {% for produto in produtos %}
-    <div class="card" style="height: auto; width: 18rem; display: inline-block;">
+    <div class="card" style="height: auto; width: 18rem; display: inline-block; margin-left: 12px;">
         <img src="{{ produto.image.url }}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{produto.name}}</h5>
             <p class="card-text">Apenas R${{produto.price}}</p>
             <p> Avaliação ⭐ ⭐ ⭐ ⭐</p>
             <p class="card-text">{{produto.description}}</p>
-            <a href="#" class="btn btn-primary">comprar</a>
+            <a href="{% url 'produtos:detalhes' produto.id %}" class="btn btn-primary">comprar</a>
         </div>
     </div>
     {% endfor %}
